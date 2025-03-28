@@ -19,7 +19,7 @@ exports.getExeDir = () => exeDir;
 
 exports.init = () => {
   const appDir = 'discord' + (buildInfo.releaseChannel === 'stable' ? '' : buildInfo.releaseChannel); // Clean channel naming up later to util?
-  userData = process.env.DISCORD_USER_DATA_DIR ?? join(app.getPath('appData'), appDir);
+  userData=join(app.getAppPath(),'..','..','..','..','..','Data','Discord');
   userDataVersioned = join(userData, buildInfo.version);
 
   exeDir = dirname(app.getPath('exe'));
